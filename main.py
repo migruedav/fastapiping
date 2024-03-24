@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from sel import sel
 
 app = FastAPI()
 
@@ -11,3 +12,8 @@ def read_root():
 @app.get("/ping")
 def read_ping():
     return {"ping": "pong"}
+
+
+@app.get("/sel")
+def read_sel():
+    return sel()
