@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def sel():
@@ -8,7 +10,9 @@ def sel():
         options.add_argument("--headless")
         options.add_argument("--remote-debugging-port=9222")
         options.binary_location = "/usr/bin/google-chrome"
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()), options=options
+        )
 
         return {"Ada": "QRCT"}
     except Exception as e:
