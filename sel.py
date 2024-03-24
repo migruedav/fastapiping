@@ -11,7 +11,7 @@ def sel():
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.binary_location = "/usr/bin/google-chrome"
-        service = Service(executable_path="/ruta/a/chromedriver")
+        service = Service(executable_path="/root/code/fastapiping/chromedriver-linux64")
 
         driver = webdriver.Chrome(options=options, service=service)
 
